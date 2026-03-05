@@ -14,7 +14,7 @@ interface WorkplaceWithShifts extends Workplace {
 const NOUT = 3;
 
 /**
- * Fetch a list of all active workplaces with counts of completed shifts, return top 3.
+ * Fetch a list of all active workplaces with counts of completed shifts, return top NOUT;
  * Limitations:
  * - has to go throgh the web api.
  * - can't include shifts in workplaces lookup, api does not support.

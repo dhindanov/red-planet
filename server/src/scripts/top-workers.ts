@@ -14,7 +14,7 @@ interface WorkerWithShifts extends Worker {
 const NOUT = 3;
 
 /**
- * Fetch a list of all active workers with counts of completed shifts, return top 3.
+ * Fetch a list of all active workers with counts of completed shifts, return top NOUT;
  * Limitations:
  * - has to go throgh the web api.
  * - api does not support fetching related objects.
