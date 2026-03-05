@@ -36,9 +36,8 @@ const topWorkers = async () => {
     const worker = workersById.get(shift.workerId)!;
     worker.shifts = (worker.shifts || 0) + 1;
   }
-  console.log(workersById);
 
-   // Group workers by number of completed shifts
+  // Group workers by number of completed shifts
   const grouped: Map<number, WorkerWithShifts[]> = groupBy<number, WorkerWithShifts>(workersById, v => v.shifts || 0);
   const topTied: [number, WorkerWithShifts[]][] = [...grouped];
   // Place groups with highest counts first
