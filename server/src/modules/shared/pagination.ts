@@ -8,7 +8,7 @@ interface CountableCollection {
   count(parameters: { skip: number; take: number; where: any }): Promise<number>;
 }
 
-const FIRST_PAGE = 1;
+const FIRST_PAGE = 0;
 const PAGE_SIZE = 10;
 const PAGE_QUERY_PARAM = "page";
 const SHARD_QUERY_PARAM = "shard";
@@ -25,10 +25,10 @@ function urlWithoutQueryParameters(request: Request): string {
 }
 
 export function getPage(pageNum?: number, shard?: number): Page {
-  return { 
-    num: pageNum ? pageNum : FIRST_PAGE, 
-    size: PAGE_SIZE, 
-    shard: shard !== undefined ? shard : DEFAULT_SHARD 
+  return {
+    num: pageNum ? pageNum : FIRST_PAGE,
+    size: PAGE_SIZE,
+    shard: shard !== undefined ? shard : DEFAULT_SHARD
   };
 }
 
